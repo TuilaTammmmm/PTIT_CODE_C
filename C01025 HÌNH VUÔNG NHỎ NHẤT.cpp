@@ -24,4 +24,5 @@ int main(){
     int rong = ymax - ymin;
     int a = max(cao,rong);
     printf("%d",a*a);
+    return 0;
 }
