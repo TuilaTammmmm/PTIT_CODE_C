@@ -1,15 +1,12 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include <stdio.h>
- 
+
 void swap(int* xp, int* yp)
 {
     int temp = *xp;
     *xp = *yp;
     *yp = temp;
 }
- 
-// An optimized version of Bubble Sort
 void bubbleSort(int arr[], int n)
 {
     int i, j;
@@ -22,9 +19,6 @@ void bubbleSort(int arr[], int n)
                 swapped = true;
             }
         }
- 
-        // If no two elements were swapped by inner loop,
-        // then break
         if (swapped == false)
             break;
     }
@@ -38,8 +32,6 @@ int main() {
         char c[10];
         scanf("%d%d ", &m, &n);
         gets(c);
-        // getchar();
-        // printf("%s",c);
         int a[m+5], b[n+5],res[m+n+5];
         int k=0;
         for (int i = 0; i < m; i++) {

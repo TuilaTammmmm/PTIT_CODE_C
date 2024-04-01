@@ -1,44 +1,67 @@
 #include <stdio.h>
 #include <math.h>
 
-int xepchong(int r1, int c1, int r2, int c2, int r3, int c3) {
-    if ((r1 == r2 && r2 == r3 && r1 == c1 + c2 + c3) || // r1=r2=r3=c1+c2+c3
-        (c1 == c2 && c2 == c3 && c1 == r1 + r2 + r3) || // c1=c2=c3=r1+r2+r3
-        (r1 == c2 && c2 == r3 && r1 == c1 + r2 + c3) || // r1=c2=r3=c1+r2+c3
-        (r1 == c2 && c2 == c3 && r1 == c1 + r2 + r3) || // r1=c2=c3=c1+r2+r3
-        (r1 == r2 && r2 == c3 && r1 == c1 + c2 + r3) || // r1=r2=c3=c1+c2+r3
-        (c1 == r2 && r2 == r3 && c1 == r1 + c2 + c3) || // c1=r2=r3=r1+c2+c3
-        (c1 == r2 && r2 == c3 && c1 == r1 + c2 + r3) || // c1=r2=c3=r1+c2+r3
-        (c1 == c2 && c2 == r3 && c1 == r1 + r2 + c3)) {  // c1=c2=r3=r1+r2+c3
-        printf("YES\n");
-    }
+long long square(long long n)
+{
+	long long y = sqrt(n);
+	if (y * y == n)
+		return y;
+	return 0;
 }
 
-int lungtung(int r1, int c1, int r2, int c2, int r3, int c3) {
-    printf("YES\n");
+long long swap(long long *a, long long *b)
+{
+	long long c = *a;
+	*a = *b;
+	*b = c;
 }
 
-int main() {
-    int r1, r2, r3, c1, c2, c3;
-    scanf("%d %d", &r1, &c1);
-    scanf("%d %d", &r2, &c2);
-    scanf("%d %d", &r3, &c3);
+int main()
+{
+	long long a, b, c, d, e, f;
+	scanf("%lld %lld %lld %lld %lld %lld", &a, &b, &c, &d, &e, &f);
+	long long n = a * b + c * d + e * f;
+	if (square(n) == 0)
+	{
+		printf("NO");
+		return 0;
+	}
+	else
+	{
+		long long y = square(n);
+		if (a > b)
+			swap(&a, &b); // a    b
+		if (c > d)
+			swap(&c, &d); // c    d
+		if (e > f)
+			swap(&e, &f); // e    f
 
-    int S1 = r1 * c1;
-    int S2 = r2 * c2;
-    int S3 = r3 * c3;
-    int N = S1 + S2 + S3;
-    int can = sqrt(N);
-
-    if (can * can == N) {
-        xepchong(r1, c1, r2, c2, r3, c3);
-        lungtung(r1, c1, r2, c2, r3, c3);
-    } else {
-        printf("NO\n");
-    }
-
-    return 0;
+		if (b == d && d == f && f == y)
+			printf("YES");
+		else
+		{
+			if (d == y)
+			{
+				swap(&d, &b);
+				swap(&c, &a);
+			}
+			if (f == y)
+			{
+				swap(&f, &b);
+				swap(&e, &a);
+			}
+			if (b == y)
+			{
+				a = y - a;
+				if (c == a && e == a || c == a && f == a || d == a && e == a || d == a && f == a)
+					printf("YES");
+				else
+					printf("NO");
+			}
+			else
+				printf("NO");
+		}
+	}
+	return 0;
 }
-
-
 
