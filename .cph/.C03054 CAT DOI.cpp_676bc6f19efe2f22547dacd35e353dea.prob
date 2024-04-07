@@ -1,0 +1,1 @@
+{"name":"Local: C03054 CAT DOI","url":"e:\\Tam\\Learning\\PTIT_CODE_C\\C03054 CAT DOI.cpp","tests":[{"id":1712471178612,"input":"3\n\n1890\n\n3681\n\n8919","output":""},{"id":1712471315407,"input":"","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Tam\\Learning\\PTIT_CODE_C\\C03054 CAT DOI.cpp","group":"local","local":true}
