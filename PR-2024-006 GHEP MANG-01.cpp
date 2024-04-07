@@ -63,7 +63,8 @@ int main() {
         }
         }
         else if(c[0]=='A')
-        {for (int i = 0; i < n; i++) {
+        {
+            for (int i = 0; i < n; i++) {
             printf("%d ",b[i]);
             
         }
