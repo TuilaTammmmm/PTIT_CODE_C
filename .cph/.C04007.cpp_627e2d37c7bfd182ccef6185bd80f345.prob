@@ -1,0 +1,1 @@
+{"name":"Local: C04007","url":"e:\\Tam\\Learning\\PTIT_CODE_C\\C04007.cpp","tests":[{"id":1716702731941,"input":"5 3\n\n1 2 3 4 5\n\n6 7 8\n\n3","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Tam\\Learning\\PTIT_CODE_C\\C04007.cpp","group":"local","local":true}
